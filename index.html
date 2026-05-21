@@ -3,135 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Pedidos Profesional</title>
-    <!-- Tailwind CSS para diseño ágil y responsivo -->
+    <title>Pancake House - Pedidos en Línea</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-gray-50 font-sans text-gray-900 min-h-screen flex flex-col justify-between">
 
-    <header class="bg-blue-900 text-white shadow-md p-4">
+    <header class="bg-amber-600 text-white shadow-md p-4">
         <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold tracking-tight">Portal de Pedidos</h1>
-            <span class="text-sm bg-blue-800 px-3 py-1 rounded text-blue-200">En línea</span>
+            <h1 class="text-2xl font-bold tracking-tight">🥞 Pancake House</h1>
+            <span class="text-sm bg-amber-700 px-3 py-1 rounded-full text-amber-100 font-medium">Pedidos Abiertos</span>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto p-4 w-full flex-grow">
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-            <h2 class="text-lg font-semibold mb-4 text-gray-800 border-b pb-2">Detalles de tu Solicitud</h2>
+    <main class="max-w-4xl mx-auto p-4 w-full flex-grow space-y-6">
+        
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <h2 class="text-xl font-bold mb-4 text-gray-800 border-b pb-2">Selecciona tus Pancakes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="border border-gray-200 rounded-lg p-4 flex flex-col justify-between bg-amber-50/30">
+                    <div>
+                        <h3 class="font-bold text-lg text-amber-900">1. Clásicos con Mantequilla</h3>
+                        <p class="text-gray-600 text-sm mt-1">Tres piezas esponjosas acompañadas de mantequilla derretida y miel pura de maple.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-amber-700 font-extrabold text-xl">$8.50 USD</span>
+                        <input type="number" id="cant_clasico" min="0" value="0" onchange="calcularTotal()" 
+                               class="w-16 px-2 py-1 border border-gray-300 rounded text-center focus:ring-2 focus:ring-amber-500">
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-4 flex flex-col justify-between bg-amber-50/30">
+                    <div>
+                        <h3 class="font-bold text-lg text-amber-900">2. Arándanos & Yogur</h3>
+                        <p class="text-gray-600 text-sm mt-1">Nuestra masa artesanal mezclada con arándanos frescos, yogur griego y azúcar glass.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-amber-700 font-extrabold text-xl">$10.00 USD</span>
+                        <input type="number" id="cant_arandano" min="0" value="0" onchange="calcularTotal()" 
+                               class="w-16 px-2 py-1 border border-gray-300 rounded text-center focus:ring-2 focus:ring-amber-500">
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-4 flex flex-col justify-between bg-amber-50/30">
+                    <div>
+                        <h3 class="font-bold text-lg text-amber-900">3. Chocolate & Plátano</h3>
+                        <p class="text-gray-600 text-sm mt-1">Capa interna de chispas de chocolate derretidas, rodajas de plátano tabasco y jarabe de fudge.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-amber-700 font-extrabold text-xl">$11.00 USD</span>
+                        <input type="number" id="cant_chocolate" min="0" value="0" onchange="calcularTotal()" 
+                               class="w-16 px-2 py-1 border border-gray-300 rounded text-center focus:ring-2 focus:ring-amber-500">
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-4 flex flex-col justify-between bg-amber-50/30">
+                    <div>
+                        <h3 class="font-bold text-lg text-amber-900">4. Tocino & Huevo (Salado)</h3>
+                        <p class="text-gray-600 text-sm mt-1">Combinación premium norteña: Dos pancakes acompañados de tocino crujiente y huevo estrellado.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-amber-700 font-extrabold text-xl">$13.00 USD</span>
+                        <input type="number" id="cant_salado" min="0" value="0" onchange="calcularTotal()" 
+                               class="w-16 px-2 py-1 border border-gray-300 rounded text-center focus:ring-2 focus:ring-amber-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <h2 class="text-xl font-bold mb-4 text-gray-800 border-b pb-2">Información de Entrega</h2>
             
             <form id="formPedido" class="space-y-4">
-                <!-- Nombre del Cliente -->
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo *</label>
-                    <input type="text" id="cliente" required 
-                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nombre del Cliente *</label>
+                    <input type="text" id="cliente" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
                 </div>
 
-                <!-- Teléfono de Contacto -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono de Contacto *</label>
-                    <input type="tel" id="telefono" required placeholder="Ej. 833 4519001"
-                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="tel" id="telefono" required placeholder="Ej. 833 4519001" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
                 </div>
 
-                <!-- Dirección de Entrega -->
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Dirección de Entrega</label>
-                    <input type="text" id="direccion" placeholder="Dejar vacío si recoge en sucursal"
-                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Dirección Completa (Opcional si recoge)</label>
+                    <input type="text" id="direccion" placeholder="Calle, Número y Colonia" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
                 </div>
 
-                <!-- Detalles del Pedido -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Artículos / Especificaciones del Pedido *</label>
-                    <textarea id="detallesPedido" rows="4" required placeholder="Detalla los productos que deseas ordenar..."
-                              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                <div class="bg-gray-100 p-4 rounded-lg flex justify-between items-center">
+                    <span class="font-bold text-gray-700 text-lg">Total de tu Pedido:</span>
+                    <span id="txtTotal" class="text-2xl font-black text-amber-600">$0.00 USD</span>
                 </div>
 
-                <!-- Total Estimado -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Monto Total Estimado ($) *</label>
-                    <input type="number" id="total" step="0.01" required min="0"
-                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-
-                <!-- Botón de Envío -->
-                <div class="pt-2">
-                    <button type="submit" id="btnEnviar" 
-                            class="w-full bg-blue-600 text-white font-medium py-2.5 px-4 rounded-md hover:bg-blue-700 transition duration-200 cursor-pointer disabled:bg-gray-400">
-                        Confirmar y Enviar Pedido
-                    </button>
-                </div>
+                <button type="submit" id="btnEnviar" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-md transition duration-200 cursor-pointer disabled:bg-gray-400">
+                    Confirmar y Enviar Pedido a Cocina
+                </button>
             </form>
 
-            <!-- Contenedor de Estado / Notificaciones -->
             <div id="mensajeEstado" class="mt-4 p-4 rounded-md hidden"></div>
         </div>
     </main>
 
     <footer class="bg-gray-800 text-gray-400 text-xs text-center p-4 mt-8">
         <p>&copy; 2026 Portal de Pedidos Automatizado. Todos los derechos reservados.</p>
-        <p class="mt-1">Contacto de Soporte Técnico: <span class="text-gray-300 font-mono">833 4519001</span></p>
+        <p class="mt-1">Contacto de Soporte: <span class="text-gray-300 font-mono">833 4519001</span></p>
     </footer>
 
     <script>
-        // REEMPLAZA ESTA URL con el enlace exacto que te proporcionó Google Apps Script al implementar
-        const WEB_APP_URL = "https://script.google.com/macros/s/XXXXXX/exec";
+        // COLOCA AQUÍ LA URL DE TU APLICACIÓN WEB DE GOOGLE APPS SCRIPT (TERMINADA EN /exec)
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby3n6_DvF0tEJp42whNrO5Im1AmKK6bfCDWGXVTYIuZ5nYGP8CZ4xh2fsRq8IYDJlikLw/exec";
+
+        // Precios fijos declarados en duro para evitar alteraciones del cliente
+        const PRECIOS = { clasico: 8.50, arandano: 10.00, chocolate: 11.00, salado: 13.00 };
+        let totalCalculado = 0;
+        let resumenDetalles = "";
+
+        function calcularTotal() {
+            const cClasico = parseInt(document.getElementById('cant_clasico').value) || 0;
+            const cArandano = parseInt(document.getElementById('cant_arandano').value) || 0;
+            const cChocolate = parseInt(document.getElementById('cant_chocolate').value) || 0;
+            const cSalado = parseInt(document.getElementById('cant_salado').value) || 0;
+
+            totalCalculado = (cClasico * PRECIOS.clasico) + (cArandano * PRECIOS.arandano) + (cChocolate * PRECIOS.chocolate) + (cSalado * PRECIOS.salado);
+            document.getElementById('txtTotal').innerText = `$${totalCalculado.toFixed(2)} USD`;
+
+            // Armar texto descriptivo para enviar al Sheet
+            let items = [];
+            if(cClasico > 0) items.push(`${cClasico}x Clásicos`);
+            if(cArandano > 0) items.push(`${cArandano}x Arándanos`);
+            if(cChocolate > 0) items.push(`${cChocolate}x Chocolate`);
+            if(cSalado > 0) items.push(`${cSalado}x Tocino/Huevo`);
+            resumenDetalles = items.join(', ');
+        }
 
         document.getElementById('formPedido').addEventListener('submit', async function(e) {
             e.preventDefault();
+            calcularTotal(); // Forzar recalculación de seguridad
             
+            if (totalCalculado <= 0) {
+                alert("Por favor, añade al menos un pancake a tu orden.");
+                return;
+            }
+
             const btnEnviar = document.getElementById('btnEnviar');
             const mensajeEstado = document.getElementById('mensajeEstado');
             
-            // Bloquear interfaz para evitar doble envío
             btnEnviar.disabled = true;
-            btnEnviar.innerText = "Procesando pedido, por favor espere...";
-            
-            // Ocultar estados anteriores
-            mensajeEstado.classList.add('hidden');
+            btnEnviar.innerText = "Conectando con el servidor de Google Sheets...";
             mensajeEstado.className = "mt-4 p-4 rounded-md hidden"; 
 
-            // Recolección de datos del formulario
             const payload = {
                 cliente: document.getElementById('cliente').value.trim(),
                 telefono: document.getElementById('telefono').value.trim(),
                 direccion: document.getElementById('direccion').value.trim(),
-                detallesPedido: document.getElementById('detallesPedido').value.trim(),
-                total: document.getElementById('total').value
+                detallesPedido: resumenDetalles,
+                total: totalCalculado
             };
 
             try {
-                // Ejecución de la llamada asíncrona hacia el backend en Google Sheets
-                const response = await fetch(WEB_APP_URL, {
+                // Envío asíncrono
+                await fetch(WEB_APP_URL, {
                     method: 'POST',
-                    mode: 'no-cors', // Requerido debido a la arquitectura de redirección de Apps Script
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    mode: 'no-cors', 
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
 
-                // Nota: Con mode: 'no-cors', no podemos leer el cuerpo de la respuesta ni el estatus HTTP directamente.
-                // Si la promesa se resuelve sin caer en el 'catch', se asume que el servidor recibió los datos correctamente.
-                
-                mensajeEstado.innerText = "¡Pedido enviado con éxito! Nos comunicaremos contigo a la brevedad.";
-                mensajeEstado.classList.remove('hidden');
-                mensajeEstado.classList.add('bg-green-50', 'text-green-800', 'border', 'border-green-200');
-                
-                // Limpiar el formulario
+                mensajeEstado.innerText = "¡Pedido registrado! Tus pancakes están en camino. Resumen: " + resumenDetalles;
+                mensajeEstado.className = "mt-4 p-4 rounded-md bg-green-50 text-green-800 border border-green-200";
                 document.getElementById('formPedido').reset();
+                calcularTotal();
 
             } catch (error) {
-                console.error("Error al enviar el pedido:", error);
-                mensajeEstado.innerText = "Ocurrió un problema de conexión. Por favor, intenta de nuevo o comunícate al 833 4519001.";
-                mensajeEstado.classList.remove('hidden');
-                mensajeEstado.classList.add('bg-red-50', 'text-red-800', 'border', 'border-red-200');
+                console.error(error);
+                mensajeEstado.innerText = "Error de enlace. Por favor, reporta este fallo al soporte: 833 4519001.";
+                mensajeEstado.className = "mt-4 p-4 rounded-md bg-red-50 text-red-800 border border-red-200";
             } finally {
-                // Reactivar botón
                 btnEnviar.disabled = false;
-                btnEnviar.innerText = "Confirmar y Enviar Pedido";
+                btnEnviar.innerText = "Confirmar y Enviar Pedido a Cocina";
             }
         });
     </script>
