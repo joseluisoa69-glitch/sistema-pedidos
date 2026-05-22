@@ -3,198 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pancake House Premium - Pedidos y Pagos</title>
+    <title>Hot Cakes Premium - Pedidos en Línea</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-slate-50 font-sans text-slate-900 min-h-screen flex flex-col justify-between">
+<body class="bg-stone-50 font-sans text-stone-900 min-h-screen flex flex-col justify-between">
 
-    <header class="bg-amber-700 text-white shadow-md p-5">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-black tracking-tight">🥞 PANCAKE HOUSE</h1>
-                <p class="text-xs text-amber-200 mt-0.5 font-mono">Plataforma de Transacciones Seguras</p>
-            </div>
-            <span class="text-xs bg-amber-800 px-3 py-1.5 rounded-full text-amber-100 font-bold uppercase tracking-wider">Servicio Activo</span>
-        </div>
+    <header class="bg-amber-700 text-white shadow-md p-5 text-center">
+        <h1 class="text-2xl font-black tracking-tight uppercase">🥞 HOT CAKES PREMIUM</h1>
+        <p class="text-xs text-amber-100 font-medium mt-1">El post-entreno perfecto para cumplir tus macros</p>
     </header>
 
-    <main class="max-w-5xl mx-auto p-4 w-full flex-grow space-y-6">
+    <main class="max-w-4xl mx-auto p-4 w-full flex-grow space-y-6">
         
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-            <h2 class="text-lg font-bold mb-4 text-slate-800 uppercase tracking-wide border-b pb-2 border-slate-100">Menú de Especialidades</h2>
+        <div class="bg-white p-6 rounded-xl shadow-xs border border-stone-200">
+            <h2 class="text-sm font-bold text-stone-500 uppercase tracking-wider border-b pb-2 mb-4">Selecciona tu opción Fit</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="border border-slate-200 rounded-xl overflow-hidden flex flex-col justify-between bg-white shadow-xs">
-                    <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=500&q=80" alt="Pancakes Clásicos" class="w-full h-44 object-cover">
-                    <div class="p-4 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-extrabold text-base text-slate-900">Clásicos con Mantequilla y Miel</h3>
-                            <p class="text-slate-600 text-xs mt-1">Tres piezas esponjosas bañadas en auténtica miel de maple pura y un toque de mantequilla artesanal derretida.</p>
+            <div class="space-y-4">
+                <div class="border border-stone-200 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center bg-stone-50/50 gap-4">
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-black text-stone-900 text-base">1. El Clásico Artesanal</h3>
+                            <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded-sm">POWER</span>
                         </div>
-                        <div class="flex justify-between items-center mt-4 pt-2 border-t border-slate-50">
-                            <span class="text-amber-700 font-black text-lg">$8.50 USD</span>
-                            <input type="number" id="cant_clasico" min="0" value="0" onchange="calcularMontoTotal()" class="w-16 px-2 py-1 border border-slate-300 rounded-md text-center font-bold text-slate-800 focus:ring-2 focus:ring-amber-500 focus:outline-none">
-                        </div>
+                        <p class="text-stone-600 text-xs mt-1">Crema de cacahuate casera, miel natural, plátano y nuez picada. <span class="font-mono text-amber-700 font-semibold">(55.3g P | 845 kcal)</span></p>
+                    </div>
+                    <div class="flex items-center justify-between w-full sm:w-auto gap-4">
+                        <span class="font-black text-stone-900 text-lg whitespace-nowrap">$115 MXN</span>
+                        <input type="number" id="cant_clasico" min="0" value="0" onchange="calcularSumaTotal()" class="w-16 px-2 py-1 border border-stone-300 rounded text-center font-bold focus:ring-2 focus:ring-amber-500 focus:outline-none">
                     </div>
                 </div>
 
-                <div class="border border-slate-200 rounded-xl overflow-hidden flex flex-col justify-between bg-white shadow-xs">
-                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=500&q=80" alt="Pancakes Arándanos" class="w-full h-44 object-cover">
-                    <div class="p-4 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-extrabold text-base text-slate-900">Arándanos Silvestres y Yogur</h3>
-                            <p class="text-slate-600 text-xs mt-1">Masa enriquecida con arándanos orgánicos frescos, acompañados de yogur griego natural y una lluvia fina de azúcar glass.</p>
-                        </div>
-                        <div class="flex justify-between items-center mt-4 pt-2 border-t border-slate-50">
-                            <span class="text-amber-700 font-black text-lg">$10.00 USD</span>
-                            <input type="number" id="cant_arandano" min="0" value="0" onchange="calcularMontoTotal()" class="w-16 px-2 py-1 border border-slate-300 rounded-md text-center font-bold text-slate-800 focus:ring-2 focus:ring-amber-500 focus:outline-none">
-                        </div>
+                <div class="border border-stone-200 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center bg-stone-50/50 gap-4">
+                    <div class="flex-grow">
+                        <h3 class="font-black text-stone-900 text-base">2. Blueberry Blast 🫐</h3>
+                        <p class="text-stone-600 text-xs mt-1">Blueberries horneados, yogurt griego, miel natural y almendra fileteada crujiente. <span class="font-mono text-amber-700 font-semibold">(52.2g P | 770 kcal)</span></p>
+                    </div>
+                    <div class="flex items-center justify-between w-full sm:w-auto gap-4">
+                        <span class="font-black text-stone-900 text-lg whitespace-nowrap">$140 MXN</span>
+                        <input type="number" id="cant_blueberry" min="0" value="0" onchange="calcularSumaTotal()" class="w-16 px-2 py-1 border border-stone-300 rounded text-center font-bold focus:ring-2 focus:ring-amber-500 focus:outline-none">
                     </div>
                 </div>
 
-                <div class="border border-slate-200 rounded-xl overflow-hidden flex flex-col justify-between bg-white shadow-xs">
-                    <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=500&q=80" alt="Pancakes Chocolate" class="w-full h-44 object-cover">
-                    <div class="p-4 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-extrabold text-base text-slate-900">Doble Chocolate y Plátano</h3>
-                            <p class="text-slate-600 text-xs mt-1">Con chispas de chocolate belga semi-amargo derretidas en su interior, rodajas de plátano fresco y jarabe de fudge artesanal.</p>
-                        </div>
-                        <div class="flex justify-between items-center mt-4 pt-2 border-t border-slate-50">
-                            <span class="text-amber-700 font-black text-lg">$11.00 USD</span>
-                            <input type="number" id="cant_chocolate" min="0" value="0" onchange="calcularMontoTotal()" class="w-16 px-2 py-1 border border-slate-300 rounded-md text-center font-bold text-slate-800 focus:ring-2 focus:ring-amber-500 focus:outline-none">
-                        </div>
+                <div class="border border-stone-200 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center bg-stone-50/50 gap-4">
+                    <div class="flex-grow">
+                        <h3 class="font-black text-stone-900 text-base">3. Choco-Fresa Fit 🍫🍓</h3>
+                        <p class="text-stone-600 text-xs mt-1">Masa oscura con cacao puro, crema de cacahuate casera, miel, fresas frescas y almendra. <span class="font-mono text-amber-700 font-semibold">(56.0g P | 875 kcal)</span></p>
                     </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-xl overflow-hidden flex flex-col justify-between bg-white shadow-xs">
-                    <img src="https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?auto=format&fit=crop&w=500&q=80" alt="Pancakes Tocino" class="w-full h-44 object-cover">
-                    <div class="p-4 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-extrabold text-base text-slate-900">Premium Tocino Crujiente y Huevo</h3>
-                            <p class="text-slate-600 text-xs mt-1">Gourmet salado: Dos piezas esponjosas emparejadas con tiras de tocino ahumado grueso y un huevo estrellado en término medio.</p>
-                        </div>
-                        <div class="flex justify-between items-center mt-4 pt-2 border-t border-slate-50">
-                            <span class="text-amber-700 font-black text-lg">$13.00 USD</span>
-                            <input type="number" id="cant_salado" min="0" value="0" onchange="calcularMontoTotal()" class="w-16 px-2 py-1 border border-slate-300 rounded-md text-center font-bold text-slate-800 focus:ring-2 focus:ring-amber-500 focus:outline-none">
-                        </div>
+                    <div class="flex items-center justify-between w-full sm:w-auto gap-4">
+                        <span class="font-black text-stone-900 text-lg whitespace-nowrap">$130 MXN</span>
+                        <input type="number" id="cant_chocofresa" min="0" value="0" onchange="calcularSumaTotal()" class="w-16 px-2 py-1 border border-stone-300 rounded text-center font-bold focus:ring-2 focus:ring-amber-500 focus:outline-none">
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-            <h2 class="text-lg font-bold mb-4 text-slate-800 uppercase tracking-wide border-b pb-2 border-slate-100">Información del Cliente y Pago</h2>
+        <div class="bg-white p-6 rounded-xl shadow-xs border border-stone-200">
+            <div class="flex justify-between items-center border-b pb-2 mb-4">
+                <h2 class="text-sm font-bold text-stone-500 uppercase tracking-wider">Toppings al Gusto</h2>
+                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2 py-1 rounded">+$15 MXN c/u</span>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-medium text-stone-700">
+                <label class="flex items-center gap-2 p-2 rounded hover:bg-stone-50 cursor-pointer"><input type="checkbox" id="top_crema" onchange="calcularSumaTotal()" class="rounded text-amber-600 focus:ring-amber-500"> Crema de Cacahuate Real (Casera)</label>
+                <label class="flex items-center gap-2 p-2 rounded hover:bg-stone-50 cursor-pointer"><input type="checkbox" id="top_nutella" onchange="calcularSumaTotal()" class="rounded text-amber-600 focus:ring-amber-500"> Nutella</label>
+                <label class="flex items-center gap-2 p-2 rounded hover:bg-stone-50 cursor-pointer"><input type="checkbox" id="top_miel" onchange="calcularSumaTotal()" class="rounded text-amber-600 focus:ring-amber-500"> Más Miel Natural</label>
+                <label class="flex items-center gap-2 p-2 rounded hover:bg-stone-50 cursor-pointer"><input type="checkbox" id="top_almendra" onchange="calcularSumaTotal()" class="rounded text-amber-600 focus:ring-amber-500"> Almendras Fileteadas</label>
+                <label class="flex items-center gap-2 p-2 rounded hover:bg-stone-50 cursor-pointer"><input type="checkbox" id="top_nuez" onchange="calcularSumaTotal()" class="rounded text-amber-600 focus:ring-amber-500"> Nuez Picada</label>
+                <label class="flex items-center gap-2 p-2 rounded hover:bg-stone-50 cursor-pointer"><input type="checkbox" id="top_secos" onchange="calcularSumaTotal()" class="rounded text-amber-600 focus:ring-amber-500"> Frutos Secos (Mix)</label>
+                <label class="flex items-center gap-2 p-2 rounded hover:bg-stone-50 cursor-pointer"><input type="checkbox" id="top_yogurt" onchange="calcularSumaTotal()" class="rounded text-amber-600 focus:ring-amber-500"> Yogurt Griego</label>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-xs border border-stone-200">
+            <h2 class="text-sm font-bold text-stone-500 uppercase tracking-wider border-b pb-2 mb-4">Datos del Pedido</h2>
             
             <form id="formPedido" class="space-y-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre Completo del Cliente *</label>
-                        <input type="text" id="cliente" required class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                        <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Nombre Completo *</label>
+                        <input type="text" id="cliente" required class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Teléfono de Contacto *</label>
-                        <input type="tel" id="telefono" required placeholder="Ej. 833 4519001" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm font-mono">
+                        <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Teléfono de Contacto *</label>
+                        <input type="tel" id="telefono" required placeholder="8334519001" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm font-mono">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Dirección Estricta de Entrega</label>
-                    <input type="text" id="direccion" placeholder="Calle, número, colonia o indicar si se recoge en sucursal" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                    <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Dirección de Entrega</label>
+                    <input type="text" id="direccion" placeholder="Calle, número, colonia o indicar si pasa a sucursal" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
                 </div>
 
-                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mt-4 space-y-3">
-                    <div class="flex justify-between items-center border-b border-slate-200 pb-2">
-                        <h3 class="text-xs font-black text-slate-700 uppercase tracking-wider flex items-center gap-1">💳 Pago Seguro con Tarjeta</h3>
-                        <span class="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md font-bold border border-emerald-200">Cifrado SSL 256-bit</span>
+                <div class="bg-stone-900 text-white p-5 rounded-xl flex justify-between items-center shadow-xs">
+                    <div class="max-w-[70%]">
+                        <span class="block text-[10px] text-stone-400 font-bold uppercase tracking-wider">Resumen Actual</span>
+                        <span id="resumenTexto" class="block text-xs text-amber-300 italic truncate font-medium">Ningún producto seleccionado</span>
                     </div>
-                    
-                    <div>
-                        <label class="block text-[11px] font-bold text-slate-600 uppercase mb-1">Número de Tarjeta *</label>
-                        <input type="text" id="cc_numero" required maxlength="19" placeholder="4152 0000 0000 0000" class="w-full px-3 py-2 border border-slate-300 rounded-md bg-white text-sm font-mono focus:ring-2 focus:ring-amber-500 focus:outline-none">
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-[11px] font-bold text-slate-600 uppercase mb-1">Vencimiento *</label>
-                            <input type="text" id="cc_fecha" required maxlength="5" placeholder="MM/AA" class="w-full px-3 py-2 border border-slate-300 rounded-md bg-white text-sm font-mono text-center focus:ring-2 focus:ring-amber-500 focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-[11px] font-bold text-slate-600 uppercase mb-1">Código CVC *</label>
-                            <input type="password" id="cc_cvc" required maxlength="4" placeholder="***" class="w-full px-3 py-2 border border-slate-300 rounded-md bg-white text-sm font-mono text-center focus:ring-2 focus:ring-amber-500 focus:outline-none">
-                        </div>
+                    <div class="text-right">
+                        <span class="block text-[10px] text-stone-400 font-bold uppercase tracking-wider">Total a Pagar</span>
+                        <span id="txtTotal" class="text-2xl font-black text-amber-400 font-mono">$0.00 MXN</span>
                     </div>
                 </div>
 
-                <div class="bg-slate-900 text-white p-4 rounded-xl flex justify-between items-center shadow-xs">
-                    <div>
-                        <span class="block text-xs text-slate-400 font-bold uppercase tracking-wider">Total a Liquidar</span>
-                        <span id="resumenItems" class="block text-[11px] text-amber-300 italic max-w-xs truncate">Ningún artículo seleccionado</span>
-                    </div>
-                    <span id="txtTotal" class="text-2xl font-black text-amber-400 font-mono">$0.00 USD</span>
-                </div>
-
-                <button type="submit" id="btnEnviar" class="w-full bg-amber-600 hover:bg-amber-700 text-white text-sm font-bold py-3.5 px-4 rounded-lg transition duration-150 cursor-pointer shadow-xs disabled:bg-slate-400">
-                    Procesar Pago y Enviar Pedido
+                <button type="submit" id="btnEnviar" class="w-full bg-amber-600 hover:bg-amber-700 text-white text-sm font-bold py-3.5 px-4 rounded-lg transition duration-150 cursor-pointer shadow-xs disabled:bg-stone-400">
+                    Confirmar e Ingresar Pedido a Cocina
                 </button>
             </form>
 
-            <div id="mensajeEstado" class="mt-4 p-4 rounded-lg text-sm hidden"></div>
+            <div id="mensajeEstado" class="mt-4 p-4 rounded-lg text-sm hidden font-medium"></div>
         </div>
     </main>
 
-    <footer class="bg-slate-800 text-slate-400 text-[11px] text-center p-4 mt-8 border-t border-slate-700">
-        <p>&copy; 2026 Portal Comercial de Pedidos Automatizado. Todos los derechos reservados.</p>
-        <p class="mt-1 font-mono">Soporte Operativo Centralizado: <span class="text-slate-200">833 4519001</span></p>
+    <footer class="bg-stone-800 text-stone-400 text-[10px] text-center p-4 mt-8 border-t border-stone-700">
+        <p>&copy; 2026 Hot Cakes Premium. Sistema Integrado Automatizado.</p>
     </footer>
 
     <script>
-        // CONFIGURACIÓN CENTRALIZADA DE LA API BACKEND
-        const WEB_APP_URL = https://script.google.com/macros/s/AKfycby3n6_DvF0tEJp42whNrO5Im1AmKK6bfCDWGXVTYIuZ5nYGP8CZ4xh2fsRq8IYDJlikLw/exec;
+        // WEBHOOK DE GOOGLE APPS SCRIPT ASOCIADO EXPLICÍTAMENTE A TU PROYECTO
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby3n6_DvF0tEJp42whNrO5Im1AmKK6bfCDWGXVTYIuZ5nYGP8CZ4xh2fsRq8IYDJlikLw/exec";
 
-        const PRECIOS = { clasico: 8.50, arandano: 10.00, chocolate: 11.00, salado: 13.00 };
+        const PRECIOS_MENU = { clasico: 115, blueberry: 140, chocofresa: 130 };
+        const PRECIO_TOPPING = 15;
+
         let totalCalculado = 0;
-        let resumenDetalles = "";
+        let stringDetalles = "";
 
-        // Formateador dinámico para la tarjeta de crédito (agrega espacios automáticamente)
-        document.getElementById('cc_numero').addEventListener('input', function (e) {
-            e.target.value = e.target.value.replace(/[^\d]/g, '').replace(/(.{4})/g, '$1 ').trim();
-        });
-
-        // Formateador dinámico para la fecha de vencimiento
-        document.getElementById('cc_fecha').addEventListener('input', function (e) {
-            let val = e.target.value.replace(/[^\d]/g, '');
-            if (val.length >= 2) {
-                e.target.value = val.slice(0, 2) + '/' + val.slice(2, 4);
-            } else {
-                e.target.value = val;
-            }
-        });
-
-        function calcularMontoTotal() {
+        function calcularSumaTotal() {
+            // Unidades de Hot Cakes
             const cClasico = Math.max(0, parseInt(document.getElementById('cant_clasico').value) || 0);
-            const cArandano = Math.max(0, parseInt(document.getElementById('cant_arandano').value) || 0);
-            const cChocolate = Math.max(0, parseInt(document.getElementById('cant_chocolate').value) || 0);
-            const cSalado = Math.max(0, parseInt(document.getElementById('cant_salado').value) || 0);
+            const cBlueberry = Math.max(0, parseInt(document.getElementById('cant_blueberry').value) || 0);
+            const cChocofresa = Math.max(0, parseInt(document.getElementById('cant_chocofresa').value) || 0);
 
-            totalCalculado = (cClasico * PRECIOS.clasico) + (cArandano * PRECIOS.arandano) + (cChocolate * PRECIOS.chocolate) + (cSalado * PRECIOS.salado);
-            document.getElementById('txtTotal').innerText = `$${totalCalculado.toFixed(2)} USD`;
-
-            let items = [];
-            if(cClasico > 0) items.push(`${cClasico}x Clásicos`);
-            if(cArandano > 0) items.push(`${cArandano}x Arándanos`);
-            if(cChocolate > 0) items.push(`${cChocolate}x Chocolate`);
-            if(cSalado > 0) items.push(`${cSalado}x Tocino/Huevo`);
+            // Estado de Toppings
+            let totalToppings = 0;
+            let toppingsSeleccionados = [];
             
-            resumenDetalles = items.join(', ');
-            document.getElementById('resumenItems').innerText = resumenDetalles || "Ningún artículo seleccionado";
+            const listadoToppings = [
+                { id: 'top_crema', nombre: 'Extra Crema Cacahuate' },
+                { id: 'top_nutella', nombre: 'Extra Nutella' },
+                { id: 'top_miel', nombre: 'Extra Miel' },
+                { id: 'top_almendra', nombre: 'Extra Almendras' },
+                { id: 'top_nuez', nombre: 'Extra Nuez' },
+                { id: 'top_secos', nombre: 'Extra Frutos Secos' },
+                { id: 'top_yogurt', nombre: 'Extra Yogurt Griego' }
+            ];
+
+            listadoToppings.forEach(top => {
+                if (document.getElementById(top.id).checked) {
+                    totalToppings += PRECIO_TOPPING;
+                    toppingsSeleccionados.push(top.nombre);
+                }
+            });
+
+            // Sumatoria total aritmética
+            totalCalculado = (cClasico * PRECIOS_MENU.clasico) + 
+                             (cBlueberry * PRECIOS_MENU.blueberry) + 
+                             (cChocofresa * PRECIOS_MENU.chocofresa) + 
+                             totalToppings;
+
+            document.getElementById('txtTotal').innerText = `$${totalCalculado.toFixed(2)} MXN`;
+
+            // Construir cadena descriptiva exacta
+            let pedidos = [];
+            if (cClasico > 0) pedidos.push(`${cClasico}x Clásico Artesanal`);
+            if (cBlueberry > 0) pedidos.push(`${cBlueberry}x Blueberry Blast`);
+            if (cChocofresa > 0) pedidos.push(`${cChocofresa}x Choco-Fresa Fit`);
+            
+            if (toppingsSeleccionados.length > 0) {
+                pedidos.push(`Toppings: [${toppingsSeleccionados.join(', ')}]`);
+            }
+
+            stringDetalles = pedidos.join(' | ');
+            document.getElementById('resumenTexto').innerText = stringDetalles || "Ningún producto seleccionado";
         }
 
         document.getElementById('formPedido').addEventListener('submit', async function(e) {
             e.preventDefault();
-            calcularMontoTotal();
+            calcularSumaTotal(); // Forzar auditoría de montos antes del disparo de red
             
             if (totalCalculado <= 0) {
-                alert("Operación inválida: Debe ingresar al menos un artículo en el carrito.");
+                alert("Error en validación: Seleccione al menos un producto para procesar.");
                 return;
             }
 
@@ -202,43 +190,38 @@
             const mensajeEstado = document.getElementById('mensajeEstado');
             
             btnEnviar.disabled = true;
-            btnEnviar.innerText = "Transaccionando y cifrando datos de pago...";
-            mensajeEstado.className = "mt-4 p-4 rounded-lg text-sm hidden"; 
-
-            // Ofuscación básica del número de tarjeta para proteger la privacidad del cliente
-            const ccTarj = document.getElementById('cc_numero').value.trim();
-            const tarjetaOfuscada = "Visa/MC terminada en " + ccTarj.slice(-4);
+            btnEnviar.innerText = "Transmitiendo datos a la hoja de cálculo...";
+            mensajeEstado.className = "mt-4 p-4 rounded-lg text-sm hidden";
 
             const payload = {
                 cliente: document.getElementById('cliente').value.trim(),
                 telefono: document.getElementById('telefono').value.trim(),
                 direccion: document.getElementById('direccion').value.trim(),
-                detallesPedido: resumenDetalles,
-                total: totalCalculado,
-                metodoPago: tarjetaOfuscada
+                detallesPedido: stringDetalles,
+                total: totalCalculado
             };
 
             try {
-                // Ejecución asíncrona mediante redirección controlada por Apps Script
+                // Envío asíncrono multiplataforma (no-cors para mitigar bloqueos en navegadores móviles)
                 await fetch(WEB_APP_URL, {
                     method: 'POST',
-                    mode: 'no-cors', 
+                    mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
 
-                mensajeEstado.innerText = "Transacción aprobada. Pedido enviado e ingresado a cocina. Resumen: " + resumenDetalles;
-                mensajeEstado.className = "mt-4 p-4 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 font-medium";
+                mensajeEstado.innerText = "¡Pedido registrado con éxito en Google Sheets! Resumen procesado: " + stringDetalles;
+                mensajeEstado.className = "mt-4 p-4 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200";
                 document.getElementById('formPedido').reset();
-                calcularMontoTotal();
+                calcularSumaTotal();
 
             } catch (error) {
-                console.error("Fallo de comunicación de red:", error);
-                mensajeEstado.innerText = "Error crítico de pasarela. Transacción declinada. Contacte a soporte técnico inmediato: 833 4519001.";
-                mensajeEstado.className = "mt-4 p-4 rounded-lg bg-rose-50 text-rose-800 border border-rose-200 font-medium";
+                console.error("Fallo de comunicación:", error);
+                mensajeEstado.innerText = "Error de enlace con el servidor de Google. Intente nuevamente.";
+                mensajeEstado.className = "mt-4 p-4 rounded-lg bg-rose-50 text-rose-800 border border-rose-200";
             } finally {
                 btnEnviar.disabled = false;
-                btnEnviar.innerText = "Procesar Pago y Enviar Pedido";
+                btnEnviar.innerText = "Confirmar e Ingresar Pedido a Cocina";
             }
         });
     </script>
